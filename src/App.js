@@ -10,7 +10,6 @@ function App() {
   function handleAddActivity(newActivity) {
     // adds a new animal to the state + passed down to `Form`
     setActivity([...activity, { id: uid(), ...newActivity }]);
-    console.log(newActivity)
   }
 
   return (

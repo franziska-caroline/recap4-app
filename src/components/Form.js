@@ -1,6 +1,6 @@
 
 import List from "./List";
-export default function Form({ onAddActivity }) {
+export default function Form({ onAddActivity, isForGoodWeather }) {
   function handleSubmit(event) {
     event.preventDefault();
     const newActivity = {name:event.target.elements.name.value, isForGoodWeather: event.target.elements.isForGoodWeather.checked }

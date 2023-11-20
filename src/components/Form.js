@@ -3,9 +3,11 @@ import List from "./List";
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
+    const newActivity = {name:event.target.elements.name.value, isForGoodWeather: event.target.elements.isForGoodWeather.checked }
+    
     onAddActivity(
-      event.target.elements.name.value,
-      event.target.elements.isForGoodWeather.checked
+      
+     newActivity
     );
     event.target.elements.name.focus();
     event.target.reset();
@@ -18,7 +20,7 @@ export default function Form({ onAddActivity }) {
         <h2>Activity</h2>
         <label htmlFor="name">Name:</label>
         <input id="name" name="name" type="text"></input>
-        <label htmlFor="isForGoodWeather">Good-Weather Activity</label>
+        <label htmlFor="isForGoodWeather">Good-Weather activity</label>
         <input
           id="isForGoodWeather"
           name="isForGoodWeather"

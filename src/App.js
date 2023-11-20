@@ -10,12 +10,13 @@ function App() {
   function handleAddActivity(newActivity) {
     // adds a new animal to the state + passed down to `Form`
     setActivity([...activity, { id: uid(), ...newActivity }]);
+    console.log(newActivity)
   }
 
   return (
     <div className="App">
      <h1 className="form__header">Weather App</h1>
-     <List activities={activities}/>
+     <List activities={activity}/>
       <Form onAddActivity={handleAddActivity} />
 
     </div>

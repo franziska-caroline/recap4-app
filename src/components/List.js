@@ -1,21 +1,24 @@
 import Form from "./Form"
 export default function List({ activities }) {
+    console.log(activities)
     return (
         
             <ul className="activity-list">
-                {activities.map((activity) => (
+                {activities.map((activity) => {
+                    return
                     <li key={activity.id} className="activity-list__item">
-                        <h3>{activity.name}</h3>
+                        {activity.name}
                     </li>
-                ))}
-               
+                   
+})}
+            
             </ul>
 
-        
+
 
 
 
     )
 
-
+   
 }

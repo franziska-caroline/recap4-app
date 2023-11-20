@@ -6,21 +6,31 @@ import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activity, setActivity] = useLocalStorageState("activity", {
+  const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
+  });
+
+  const isGoodWeather = true;
+
+  const filterList = activities.filter((activity) => {
+    return activity.isForGoodWeather === isGoodWeather;
   });
 
   function handleAddActivity(newActivity) {
     // adds a new animal to the state + passed down to `Form`
-    setActivity([...activity, { id: uid(), ...newActivity }]);
+    setActivities([...activities, { id: uid(), ...newActivity }]);
     console.log(newActivity);
   }
-
+  console.log(activities);
   return (
     <div className="App">
       <h1 className="form__header">Weather App</h1>
-      <List activities={activity} />
-      <Form onAddActivity={handleAddActivity} />
+      <List>
+        {" "}
+        activities={activities} filterList={filterList} isGoodWeather=
+        {isGoodWeather}{" "}
+      </List>
+      <Form> onAddActivity={handleAddActivity}</Form>
     </div>
   );
 }

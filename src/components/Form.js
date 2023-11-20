@@ -20,7 +20,7 @@ export default function Form({ onAddActivity }) {
         <h2>Activity</h2>
         <label htmlFor="name">Name:</label>
         <input id="name" name="name" type="text"></input>
-        <label htmlFor="isForGoodWeather">Good-Weather Activity</label>
+        <label htmlFor="isForGoodWeather">Good-Weather activity</label>
         <input
           id="isForGoodWeather"
           name="isForGoodWeather"

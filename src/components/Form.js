@@ -1,21 +1,19 @@
-
 import List from "./List";
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
-    const newActivity = {name:event.target.elements.name.value, isForGoodWeather: event.target.elements.isForGoodWeather.checked }
-    
-    onAddActivity(
-      
-     newActivity
-    );
+    const newActivity = {
+      name: event.target.elements.name.value,
+      isForGoodWeather: event.target.elements.isForGoodWeather.checked,
+    };
+
+    onAddActivity(newActivity);
     event.target.elements.name.focus();
     event.target.reset();
   }
 
   return (
     <>
-      
       <form className="form" onSubmit={handleSubmit}>
         <h2>Activity</h2>
         <label htmlFor="name">Name:</label>

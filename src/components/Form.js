@@ -1,3 +1,5 @@
+
+import List from "./List";
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -11,7 +13,7 @@ export default function Form({ onAddActivity }) {
 
   return (
     <>
-      <h1 className="form__header">Weather App</h1>
+      
       <form className="form" onSubmit={handleSubmit}>
         <h2>Activity</h2>
         <label htmlFor="name">Name:</label>

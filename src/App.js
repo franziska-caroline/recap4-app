@@ -1,4 +1,4 @@
-import List  from "./components/List";
+import List from "./components/List";
 import "./App.css";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
@@ -28,7 +28,14 @@ function App() {
   function handleAddActivity(newActivity) {
     // adds a new animal to the state + passed down to `Form`
     setActivities([...activities, { id: uid(), ...newActivity }]);
-   
+  }
+
+  function handleDeleteActivity(id) {
+    setActivities(
+      activities.filter((activity) => {
+        return activity.id !== id;
+      })
+    );
   }
 
   return (
@@ -37,11 +44,12 @@ function App() {
         {isGoodWeather.condition} {isGoodWeather.temperature}°C
       </h1>
       <List
+        onDeleteActivity={handleDeleteActivity}
         activities={activities}
         filterList={filterList}
-        isGoodWeather={isGoodWeather}
-      />
-      <Form onAddActivity={handleAddActivity} />
+        isGoodWeather={isGoodWeather?.isGoodWeather}
+      ></List>
+      <Form onAddActivity={handleAddActivity}></Form>
     </div>
   );
 }

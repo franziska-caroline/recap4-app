@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   const filterList = activities.filter((activity) => {
-    return activity.isForGoodWeather === isGoodWeather;
+    return activity.isForGoodWeather;
   });
   function handleAddActivity(newActivity) {
     // adds a new animal to the state + passed down to `Form`

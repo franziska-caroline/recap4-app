@@ -25,12 +25,12 @@ function App() {
   return (
     <div className="App">
       <h1 className="form__header">Weather App</h1>
-      <List>
-        {" "}
-        activities={activities} filterList={filterList} isGoodWeather=
-        {isGoodWeather}{" "}
-      </List>
-      <Form> onAddActivity={handleAddActivity}</Form>
+      <List
+        activities={activities}
+        filterList={filterList}
+        isGoodWeather={isGoodWeather}
+      />
+      <Form onAddActivity={handleAddActivity} />
     </div>
   );
 }

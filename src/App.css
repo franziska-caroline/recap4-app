@@ -1,5 +1,20 @@
-.App {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(55, 55, 72);
+  margin: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+.form__header {
   text-align: center;
+  margin-top: 3rem;
+  font-size: 3rem;
 }
 
 form {
@@ -7,7 +22,4 @@ form {
   flex-direction: column;
   gap: 10px;
   padding: 1rem;
-}
-h3 {
-  background-color: blue;
 }

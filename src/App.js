@@ -1,9 +1,10 @@
-import List from "./components/List";
+import List from "./components/List/List";
 import "./App.css";
-import Form from "./components/Form";
+import Form from "./components/Form/Form";
 import { useEffect, useState } from "react";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
@@ -41,7 +42,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <main className="App">
       <h1 className="form__header">
         {isGoodWeather.condition} {isGoodWeather.temperature}°C
       </h1>
@@ -49,10 +50,10 @@ function App() {
         onDeleteActivity={handleDeleteActivity}
         activities={activities}
         filterList={filterList}
-        isGoodWeather={isGoodWeather?.isGoodWeather}
+        isGoodWeather={isGoodWeather}
       ></List>
       <Form onAddActivity={handleAddActivity}></Form>
-    </div>
+    </main>
   );
 }
 

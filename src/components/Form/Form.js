@@ -1,4 +1,5 @@
-import List from "./List";
+import "./Form.css";
+
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -15,15 +16,21 @@ export default function Form({ onAddActivity }) {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-        <h2>Activity</h2>
-        <label htmlFor="name">Name:</label>
-        <input id="name" name="name" type="text"></input>
-        <label htmlFor="isForGoodWeather">Good-Weather activity</label>
-        <input
-          id="isForGoodWeather"
-          name="isForGoodWeather"
-          type="checkbox"
-        ></input>
+        <h3>New activity</h3>
+        <div className="form__activity-input">
+          {" "}
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" type="text"></input>
+        </div>
+        <div className="form__goodweather-checkbox">
+          {" "}
+          <label htmlFor="isForGoodWeather">Good-Weather activity</label>
+          <input
+            id="isForGoodWeather"
+            name="isForGoodWeather"
+            type="checkbox"
+          ></input>
+        </div>
         <button className="form__submit-button" type="submit">
           Submit
         </button>

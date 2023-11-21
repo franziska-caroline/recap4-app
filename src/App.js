@@ -20,6 +20,8 @@ function App() {
       console.log(weather);
     }
     fetchWeatherData();
+    const intervalId = setInterval(fetchWeatherData, 5000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const filterList = activities.filter((activity) => {
